@@ -1,0 +1,1 @@
+go run main.go --input=../kratos.gg/cdn-cgi/challenge-platform/h/g/orchestrate/jsch/v1
