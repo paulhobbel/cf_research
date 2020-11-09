@@ -20,7 +20,7 @@
         var r;
         return r = document.createElement('a'), r['href'] = q, r
     };;
-    var h, i, j, k, l, m, n;
+    var h, decryptText, CloudflareUtils, k, createCookie, expireCookie, n;
     h = function h() {
         var q, r, s;
         if (q = {}, q.iCbyd = function(z, A) {
@@ -45,51 +45,56 @@
             return z !== A
         }, q['vThFC'] = 'xGqvP', q.edByr = 'xbQfH', q.BpqVM = 'cf-please-wait', q.Kpetd = 'none', q.emQnS = 'yjs-content', q.nZhKp = function(z, A, B, C) {
             return z(A, B, C)
-        }, r = q, s = c._cf_chl_opt, l(r.ppWGk, 'hc', 1), s.cRq && s.cRq['ru']) {
-            var t, u;
-            // Check if document.location matches real location specified in cRq.ru
-            // We just skip that ;)
-            // if (t = g(r.Zyrem(p, s.cRq['ru'])), u = t.protocol + '//' + t.hostname, r.siqzA(document.location.href.indexOf(u), 0)) {
-            //     var v;
-            //     if (v = document.getElementById('location-mismatch-warning'), v) {
-            //         if (r.siqzA(r.cVVsO, 'rjvYs')) v['style'].display = 'block';
-            //         else var z = function z() {
-            //             var A;
-            //             A = A.charCodeAt(n), 128 > A ? o += p.fromCharCode(A) : (127 < A && 2048 > A ? q += r.fromCharCode(r.iCbyd(r.uWMAt(A, 6), 192)) : (s += t.fromCharCode(r.xsefB(r.uWMAt(A, 12), 224)), u += v.fromCharCode(r.DDBNe(A >> 6, 63) | 128)), w += x.fromCharCode(r.xsefB(A & 63, 128)))
-            //         }
-            //     } else {
-            //         if ('Klxzj' !== 'kJUKZ') {
-            //             var w;
-            //             if (w = document.getElementById(r.NiBrI), w) {
-            //                 if (document.getElementById('yjs-content')) {
-            //                     if (r.VzyCP(r.vThFC, r.edByr)) w.innerHTML += '<div class="cf-content"><p style="background-color: #de5052; border-color: #521010; color: #fff;" class="cf-alert cf-alert-error">&#35813;&#32593;&#31449;&#36164;&#28304;&#26080;&#27861;&#36890;&#36807;&#27492;&#22320;&#22336;&#35775;&#38382;&#12290;</p></div>';
-            //                     else var A = function A() {
-            //                         var B;
-            //                         B = r.xakVS(n, o), p >>= 1, r.cOOTL(0, q) && (r = B, s = t(u++)), v |= (0 < B ? 1 : 0) * w, x <<= 1
-            //                     }
-            //                 } else w.innerHTML += '<div class="cf-content"><p style="background-color: #de5052; border-color: #521010; color: #fff;" class="cf-alert cf-alert-error">This web property is not accessible via this address.</p></div>'
-            //             }
-            //             var x, y;
-            //             x = document.getElementById(r.BpqVM), x && (x.style['display'] = r.Kpetd), y = document.getElementById('cf-content') || document.getElementById(r.emQnS), y && (y.style.display = 'none')
-            //         } else var B = function B() {
-            //             var C, D;
-            //             return C = {}, C['ZJKEb'] = function(E, F) {
-            //                 return r.iqiKE(E, F)
-            //             }, D = C, null == g ? '' : h['a'](i, 15, function(E) {
-            //                 return D.ZJKEb(k, E + 32)
-            //             }) + ' '
-            //         }
-            //     }
-            //     return r.nZhKp(l, 'cf_chl_prog', 'hc', 'F'), ![]
-            // }
-        }
+        },
+        r = q,
+        s = c._cf_chl_opt,
+        createCookie(r.ppWGk, 'hc', 1))
+        // Check if document.location matches real location specified in cRq.ru
+        // We just skip that, we are running in a sandbox so we ain't running from a real website
+        // s.cRq && s.cRq['ru']) {
+        //     var t, u;
+        //     if (t = g(r.Zyrem(p, s.cRq['ru'])), u = t.protocol + '//' + t.hostname, r.siqzA(document.location.href.indexOf(u), 0)) {
+        //         var v;
+        //         if (v = document.getElementById('location-mismatch-warning'), v) {
+        //             if (r.siqzA(r.cVVsO, 'rjvYs')) v['style'].display = 'block';
+        //             else var z = function z() {
+        //                 var A;
+        //                 A = A.charCodeAt(n), 128 > A ? o += p.fromCharCode(A) : (127 < A && 2048 > A ? q += r.fromCharCode(r.iCbyd(r.uWMAt(A, 6), 192)) : (s += t.fromCharCode(r.xsefB(r.uWMAt(A, 12), 224)), u += v.fromCharCode(r.DDBNe(A >> 6, 63) | 128)), w += x.fromCharCode(r.xsefB(A & 63, 128)))
+        //             }
+        //         } else {
+        //             if ('Klxzj' !== 'kJUKZ') {
+        //                 var w;
+        //                 if (w = document.getElementById(r.NiBrI), w) {
+        //                     if (document.getElementById('yjs-content')) {
+        //                         if (r.VzyCP(r.vThFC, r.edByr)) w.innerHTML += '<div class="cf-content"><p style="background-color: #de5052; border-color: #521010; color: #fff;" class="cf-alert cf-alert-error">&#35813;&#32593;&#31449;&#36164;&#28304;&#26080;&#27861;&#36890;&#36807;&#27492;&#22320;&#22336;&#35775;&#38382;&#12290;</p></div>';
+        //                         else var A = function A() {
+        //                             var B;
+        //                             B = r.xakVS(n, o), p >>= 1, r.cOOTL(0, q) && (r = B, s = t(u++)), v |= (0 < B ? 1 : 0) * w, x <<= 1
+        //                         }
+        //                     } else w.innerHTML += '<div class="cf-content"><p style="background-color: #de5052; border-color: #521010; color: #fff;" class="cf-alert cf-alert-error">This web property is not accessible via this address.</p></div>'
+        //                 }
+        //                 var x, y;
+        //                 x = document.getElementById(r.BpqVM), x && (x.style['display'] = r.Kpetd), y = document.getElementById('cf-content') || document.getElementById(r.emQnS), y && (y.style.display = 'none')
+        //             } else var B = function B() {
+        //                 var C, D;
+        //                 return C = {}, C['ZJKEb'] = function(E, F) {
+        //                     return r.iqiKE(E, F)
+        //                 }, D = C, null == g ? '' : h['a'](i, 15, function(E) {
+        //                     return D.ZJKEb(k, E + 32)
+        //                 }) + ' '
+        //             }
+        //         }
+        //         return r.nZhKp(l, 'cf_chl_prog', 'hc', 'F'), ![]
+        //     }
+        // }
         return !![]
     }, e.push(function() {
         var q, r;
         return q = {}, q.YJtYS = function(s) {
             return s()
         }, r = q, r.YJtYS(h)
-    }), c._cf_chl_enter = function() {
+    }),
+    c._cf_chl_enter = function() {
         var q, r, s, t, u;
         if (q = {}, q.Llama = function(z, A) {
             return z + A
@@ -99,37 +104,91 @@
             return z(A)
         }, q.qlZML = function(z, A) {
             return z < A
-        }, q.cZBCl = 'yTcUH', q.VoWfm = 'cf_chl_prog', r = q, s = c._cf_chl_opt, t = 'cf_chl_' + s.cvId, l(t, s.cHash, 1), u = r.GukpY(document.cookie.indexOf(t), -1) || !c.navigator.cookieEnabled, u) {
+        }, q.cZBCl = 'yTcUH', q.VoWfm = 'cf_chl_prog', r = q, s = c._cf_chl_opt, t = 'cf_chl_' + s.cvId, createCookie(t, s.cHash, 1), u = r.GukpY(document.cookie.indexOf(t), -1) || !c.navigator.cookieEnabled, u) {
             var v;
             return v = document.getElementById(r.CUsDj), v && (v.style.display = r.oXbuC), void 0
         }
         var w;
-        for (r.alYoB(m, 'cf_chl_' + s.cvId), l('cf_chl_prog', 's', 1), w = 0; r.qlZML(w, e['length']); w++)
+        expireCookie('cf_chl_' + s.cvId);
+        createCookie('cf_chl_prog', 's', 1);
+
+        for(w = 0; w < e.length; w++)
+        // for (r.alYoB(expireCookie, 'cf_chl_' + s.cvId), createCookie('cf_chl_prog', 's', 1), w = 0; r.qlZML(w, e['length']); w++)
+            // Cookies enabled
             if (r['GukpY'](e[w](), ![])) {
+                // Bunch of garbage.
                 if (r.GukpY('RqsMN', r.cZBCl)) var z = function z() {
                     return f['a'](g, 16, function(A) {
                         return w(A)
                     })
                 };
                 else return
-            } var x, y;
-        l(r.VoWfm, 'e', 1), x = {}, x['c'] = 0, y = {}, y.chLog = x, y.chReq = s.cType, y.cNounce = s.cNounce, y['chC'] = 0, y.chCAS = 0, y['oV'] = 1, y.cRq = s.cRq, c._cf_chl_ctx = y, c._cf_chl_ctx.chLog[c._cf_chl_ctx.chLog['c']++] = {
-            'start': new c[('Date')]().getTime()
-        }, c.setTimeout(function() {
+            }
+        var x, ctx;
+        createCookie(r.VoWfm, 'e', 1),
+        x = {},
+        x['c'] = 0,
+
+        ctx = {},
+        ctx.chLog = x,
+        ctx.chReq = s.cType,
+        ctx.cNounce = s.cNounce,
+        ctx['chC'] = 0, ctx.chCAS = 0,
+        ctx['oV'] = 1,
+        ctx.cRq = s.cRq,
+
+        c._cf_chl_ctx = ctx,
+        c._cf_chl_ctx.chLog[c._cf_chl_ctx.chLog['c']++] = {
+            'start': new Date().getTime()
+        },
+        c.setTimeout(function() {
             var A, B;
-            A = s.cFPWv ? r.Llama('h/', s.cFPWv) + '/' : '', B = r.Llama('/cdn-cgi/challenge-platform/' + A + r.kuYKH + 1 + '/0.3594574667335693:1604783808:cbe23be1774a844449faae8b0aeef8b611c314e2003ec9f4568f6f3bd1ff8b85/' + s.cRay, '/') + s.cHash, c.sendRequest(B)
+            A = s.cFPWv ? r.Llama('h/', s.cFPWv) + '/' : '',
+            //                                                                = challengeid!
+            B = r.Llama('/cdn-cgi/challenge-platform/' + A + r.kuYKH + 1 + '/0.3594574667335693:1604783808:cbe23be1774a844449faae8b0aeef8b611c314e2003ec9f4568f6f3bd1ff8b85/' + s.cRay, '/') + s.cHash,
+            c.sendRequest(B)
         }, 10)
-    }, c._cf_chl_done_ran = ![], c._cf_chl_done = function() {
-        l('cf_chl_prog', 'b', 1), c._cf_chl_done_ran = !![]
-    }, i = function(q) {
-        var t, u, v, w, x, z, A;
-        for (t = {}, t.biyNC = function(B, C) {
-            return B + C
-        }, u = t, v = 1, w = [], x = 0, z = 32, A = 1, (A = u.biyNC(c._cf_chl_opt.cRay, '_') + 0)['replace'](/./g, function(B, C) {
-            z ^= A.charCodeAt(C)
-        }); v; v = q.charCodeAt(x++), !c.isNaN(v) && w.push(c.String.fromCharCode((v - z) % 65535)));
+    },
+    c._cf_chl_done_ran = ![],
+    c._cf_chl_done = function() {
+        createCookie('cf_chl_prog', 'b', 1),
+        c._cf_chl_done_ran = !![]
+    },
+    decryptText = function(text) {
+        const cipher = c._cf_chl_opt.cRay + '_' + 0;
+        let v = 1;
+        let w = [];
+        let z = 32;
+        for (let i = 0; i < cipher.length; i ++) {
+            z ^= cipher.charCodeAt(i);
+        }
+
+        for(let x = 0; v; v = text.charCodeAt(x++)) {
+            if (!isNaN(v)) {
+                w.push(String.fromCharCode(v - z) % 65535);
+            }
+        }
+
         return w.join('')
-    }, 'object' !== typeof c.JSON && (c.JSON = {}),
+
+        // var t, u, v, w, x, z, A;
+        // for (t = {}, t.biyNC = function(B, C) {
+        //     return B + C
+        // },
+        // u = t,
+        // v = 1,
+        // w = [],
+        // x = 0,
+        // z = 32,
+        // A = 1,
+        // (A = u.biyNC(c._cf_chl_opt.cRay, '_') + 0)['replace'](/./g, function(B, C) {
+        //     z ^= A.charCodeAt(C)
+        // });
+        // v; v = responseText.charCodeAt(x++),
+        // !c.isNaN(v) && w.push(c.String.fromCharCode((v - z) % 65535)));
+        // return w.join('')
+    },
+    'object' !== typeof c.JSON && (c.JSON = {}),
         function(O, N, M, L, K, J, I, H, G, F, E, D, C, B, s) {
             if (s = {}, s.XrilG = function(R, S) {
                 return R === S
@@ -235,7 +294,7 @@
                                                 a1 = O[V], (a0 = B.rPvfz(F, a1, X)) && Y.push(B.Ycafr(E(a1), M ? ': ' : ':') + a0)
                                             } else var a4 = function a4() {
                                                 if (Y.type === 'readystatechange' && W.readyState && U.vzdZu(T.readyState, 'complete')) return;
-                                                j._cf_chl_enter()
+                                                CloudflareUtils._cf_chl_enter()
                                             }
                                         }
                                     }
@@ -246,9 +305,9 @@
                 }
             }, G = /^[\],:{}\s]*$/, H = /\\(?:["\\\/bfnrt]|u[0-9a-fA-F]{4})/g, I = /"[^"\\\n\r]*"|true|false|null|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/g, J = /(?:^|:|,)(?:\s*\[)+/g, K = /[\\"\u0000-\u001f\u007f-\u009f\u00ad\u0600-\u0604\u070f\u17b4\u17b5\u200c-\u200f\u2028-\u202f\u2060-\u206f\ufeff\ufff0-\uffff]/g, L = /[\u0000\u00ad\u0600-\u0604\u070f\u17b4\u17b5\u200c-\u200f\u2028-\u202f\u2060-\u206f\ufeff\ufff0-\uffff]/g, B.unyMN !== typeof Date.prototype.toJSON && (Date.prototype.toJSON = function() {
                 if (B.cEgCY(B.RgIoR, B.RgIoR)) var R = function R() {
-                    if (j.atob) return F(T);
+                    if (CloudflareUtils.atob) return F(T);
                     var S, T, U, V, W, X, Y;
-                    for (S = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=', T = B.GNmCj(l, T).replace(/[\t\n\f\r ]+/g, ''), T += '==' .slice(2 - (T.length & 3)), V = '', Y = 0; Y < T.length; U = B.zTeyf(S.indexOf(T.charAt(Y++)) << 18 | S.indexOf(T.charAt(Y++)) << 12 | (W = S.indexOf(T.charAt(Y++))) << 6, X = S.indexOf(T.charAt(Y++))), V += W === 64 ? N.fromCharCode(U >> 16 & 255) : B.uAMpN(X, 64) ? D.fromCharCode(U >> 16 & 255, U >> 8 & 255) : s.fromCharCode(U >> 16 & 255, B.xCebT(U >> 8, 255), B.VQhHX(U, 255)));
+                    for (S = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=', T = B.GNmCj(createCookie, T).replace(/[\t\n\f\r ]+/g, ''), T += '==' .slice(2 - (T.length & 3)), V = '', Y = 0; Y < T.length; U = B.zTeyf(S.indexOf(T.charAt(Y++)) << 18 | S.indexOf(T.charAt(Y++)) << 12 | (W = S.indexOf(T.charAt(Y++))) << 6, X = S.indexOf(T.charAt(Y++))), V += W === 64 ? N.fromCharCode(U >> 16 & 255) : B.uAMpN(X, 64) ? D.fromCharCode(U >> 16 & 255, U >> 8 & 255) : s.fromCharCode(U >> 16 & 255, B.xCebT(U >> 8, 255), B.VQhHX(U, 255)));
                     return V
                 };
                 else return B.GNmCj(isFinite, this.valueOf() || '') ? B.JBufN(B.JBufN(this.getUTCFullYear() + '-', C(B.JBufN(this.getUTCMonth(), 1))) + '-' + B.GNmCj(C, this.getUTCDate()) + 'T' + C(this.getUTCHours()), ':') + C(this.getUTCMinutes()) + ':' + B.abIeC(C, this.getUTCSeconds()) + 'Z' : null
@@ -292,7 +351,9 @@
                 }
                 throw new SyntaxError(B.dXYJE)
             })
-        }(), j = function(A, z, v, u, t, s, r) {
+        }(),
+        // Contains various utilities, acts like a class
+        CloudflareUtils = function(A, z, v, u, t, s, r) {
         return r = {}, r.xgyDU = function(B, C) {
             return B + C
         }, r.vzYmR = 'mKYir', r.gXYGh = 'bPXswpyAmQqrB234aiYUvuHDkCJElSTO7GgKnN06dtWhzZc9j8feLI1RxF5VoM', r.bWbIT = '===', r.yeuOT = function(B, C) {
@@ -423,9 +484,17 @@
                 }), ' ')
             },
             'o': function(B) {
-                return s.NZYUf(null, B) ? '' : '' == B ? null : z['b'](B['length'], 16384, function(C) {
+                if (B == null) {
+                    return ''
+                }
+
+                return z['b'](B.length, 16384, function(C) {
                     return B.charCodeAt(C) - 32
                 })
+
+                // return s.NZYUf(null, B) ? '' : '' == B ? null : z['b'](B['length'], 16384, function(C) {
+                //     return B.charCodeAt(C) - 32
+                // })
             },
             'm': function(B) {
                 var C, D, E;
@@ -454,10 +523,19 @@
                     }
                 }), z['c'](H.join(''))
             },
+
+            // compressToEncodedURIComponent
             'g': function(B) {
-                return s.NZYUf(null, B) ? '' : z['a'](B, 6, function(C) {
+                if (B == null) {
+                    return '';
+                }
+
+                return z['a'](B, 6, function (C) {
                     return 'Ez1v6CTRa+AIM5ZBxi9mYsyrPkceDKnoUVQtHup7O3FfwXj2bd$l-hgLJ4S0G8WqN'.charAt(C)
                 })
+                // return s.NZYUf(null, B) ? '' : z['a'](B, 6, function(C) {
+                //     return 'Ez1v6CTRa+AIM5ZBxi9mYsyrPkceDKnoUVQtHup7O3FfwXj2bd$l-hgLJ4S0G8WqN'.charAt(C)
+                // })
             },
             'i': function(B) {
                 if (s.uczRS(null, B)) return '';
@@ -622,8 +700,15 @@
                         G.style.display = F.KUulO
                     }
             }
-        }, A = {}, A.compressToBase64 = z['f'], A.compressToEncodedURIComponent = z['g'], A.decompressFromEncodedURIComponent = z['i'], A.decompressFromBase64 = z['h'], A
-    }(), c.SHA256 = function(q) {
+        },
+        A = {},
+        A.compressToBase64 = z['f'],
+        A.compressToEncodedURIComponent = z['g'],
+        A.decompressFromEncodedURIComponent = z['i'],
+        A.decompressFromBase64 = z['h'],
+        A
+    }(),
+    c.SHA256 = function(q) {
         var r, s, t, v;
         return r = {}, r.eLrZo = function(w, z) {
             return w << z
@@ -711,7 +796,7 @@
                         else {
                             if ('pFXpK' === s.dqDbO) var T = function T() {
                                 var U;
-                                for (i[j] = {}, U = 0; U < O.length; N[D][G.charAt(U)] = U, U++);
+                                for (decryptText[CloudflareUtils] = {}, U = 0; U < O.length; N[D][G.charAt(U)] = U, U++);
                             };
                             else {
                                 var Q, R;
@@ -788,7 +873,7 @@
             if (w.indexOf(t) == 0) return w.substring(t.length, w.length)
         }
         return ''
-    }, l = function l(q, r, s) {
+    }, createCookie = function l(cookieName, value, expireIn) {
         var t, u, v, w;
         t = {}, t.fZoFa = function(z, A) {
             return z + A
@@ -796,8 +881,8 @@
             return z * A
         }, t.gdIVP = function(z, A) {
             return z + A
-        }, t.Swuhh = ';path=/', u = t, v = new c[('Date')](), v.setTime(u.fZoFa(v.getTime(), u.GIcgZ(u.GIcgZ(s * 1, 60), 60) * 1e3)), w = u.fZoFa('expires=', v.toUTCString()), document.cookie = u.gdIVP(q + '=' + r + ';' + w, u.Swuhh)
-    }, m = function m(q) {
+        }, t.Swuhh = ';path=/', u = t, v = new c[('Date')](), v.setTime(u.fZoFa(v.getTime(), u.GIcgZ(u.GIcgZ(expireIn * 1, 60), 60) * 1e3)), w = u.fZoFa('expires=', v.toUTCString()), document.cookie = u.gdIVP(cookieName + '=' + value + ';' + w, u.Swuhh)
+    }, expireCookie = function m(q) {
         document.cookie = q + '=; Max-Age=-99999999;'
     }, n = function n() {
         var q, r, s, t;
@@ -821,8 +906,10 @@
             return u(v)
         }, q.miXVL = function(u, v, w, x) {
             return u(v, w, x)
-        }, r = q, s = c.parseInt(r.QYlsO(k, r.EgbUy)), r.BPBsR(isNaN, s) && (s = 0), t = 1e3 * c.Math.min(2 << s, 128), r.miXVL(l, r.EgbUy, s + 1, 1), c.setTimeout(function() {
+        }, r = q, s = c.parseInt(r.QYlsO(k, r.EgbUy)), r.BPBsR(isNaN, s) && (s = 0), t = 1e3 * c.Math.min(2 << s, 128), r.miXVL(createCookie, r.EgbUy, s + 1, 1), c.setTimeout(function() {
+            // Yea this is actually never going to be true, nice try to trick me ;)
             if ('BBBaJ' !== r.WpghI) document.location.reload();
+            // Ha almost got me there m8, but everything below is nothing more then useless math that's not used anywhere
             else var u = function u() {
                 for (B = 0; r.VUTKQ(C, D);
                      (F <<= 1, G == r.ZsjqL(v, 1) ? (H = 0, I.push(r.eaHEr(J, K)), L = 0) : M++), E++);
@@ -841,7 +928,7 @@
             z = ['Message: ' + q, 'URL: ' + r, 'Line: ' + s, 'Column: ' + t, w.yFvZC + JSON.stringify(u)].join(' - '), c.console.log('[[[ERROR]]]:', z), n()
         }
         return ![]
-    }, c.sendRequest = function(q, r) {
+    }, c.sendRequest = function(url, r) {
         var s, t;
         if (s = {}, s.Hkjib = function(z) {
             return z()
@@ -864,22 +951,47 @@
         if (u = ![], v = function() {
             if (u) return;
             u = !![], c.setTimeout(function() {
-                sendRequest(q, r + 1)
+                sendRequest(url, r + 1)
             }, 50)
-        }, w = t.fGtGj(o), !w) return;
+        },
+        // w = t.fGtGj(o), !w) return;
+        w = new XMLHttpRequest());
         var x, y;
-        x = t.KEhZG, w.open(x, q, !![]), t.BDwnI in w && (w.timeout = 2500, w.ontimeout = function() {
+        x = t.KEhZG,
+        w.open(x, url, !![]),
+
+        // Set timeout to 2500ms
+        t.BDwnI in w && (w.timeout = 2500,
+
+        // Retry
+        w.ontimeout = function() {
             t.Hkjib(v)
-        }), w.setRequestHeader('Content-type', 'application/x-www-form-urlencoded'), w.setRequestHeader('CF-Challenge', c._cf_chl_opt.cHash), w.onreadystatechange = function() {
+        }),
+        w.setRequestHeader('Content-type', 'application/x-www-form-urlencoded'),
+        w.setRequestHeader('CF-Challenge', c._cf_chl_opt.cHash),
+        w.onreadystatechange = function() {
+            // readyState != 4 == return
             if (t.PcEJa(w.readyState, 4)) return;
+
+            // status != 200 && status != 304
             if (t.PcEJa(w.status, 200) && t.PcEJa(w.status, 304)) {
+                // We retry.
                 if (t.JaMlV('AJZjp', t.mWHix)) return v(), void 0;
+
+                // Garbage
                 else var z = function z() {
                     return e(f)
                 }
             }
-            l(t.pxsMx, t.gqzzV('b', c._cf_chl_ctx.chLog['c']), 1), new c[('Function')](i(w.responseText))(), l(t.pxsMx, 'a' + c._cf_chl_ctx.chLog['c'], 1)
-        }, y = j.compressToEncodedURIComponent(JSON.stringify(c._cf_chl_ctx)).replace('+', '%2b'), w.send(t.LjqJm('v_', c._cf_chl_opt.cRay) + '=' + y)
+
+            // createCookie('cf_chl_prog', 'b', ctx.chLog.c, 1)
+            createCookie(t.pxsMx, t.gqzzV('b', c._cf_chl_ctx.chLog['c']), 1),
+            // new c[('Function')](decryptText(w.responseText))(),
+            decryptText(w.responseText)();
+            createCookie(t.pxsMx, 'a' + c._cf_chl_ctx.chLog['c'], 1)
+        },
+        y = CloudflareUtils.compressToEncodedURIComponent(JSON.stringify(c._cf_chl_ctx)).replace('+', '%2b'),
+        w.send(t.LjqJm('v_', c._cf_chl_opt.cRay) + '=' + y)
     }, o = function o() {
         var q, r;
         if (q = {}, q.XhrgO = 'Microsoft.XMLHTTP', r = q, c.XMLHttpRequest) return new c[('XMLHttpRequest')]();

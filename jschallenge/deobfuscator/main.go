@@ -53,7 +53,8 @@ func parseLookupTable(contents string) ([]string, error) {
 
 func applyLookupTable(contents string, lookupTable []string) string {
 	log.Println("Applying lookup table")
-	return lookupTableUsageExpr.ReplaceAllStringFunc(contents, func(match string) string {
+	replacementStats := 0
+	newContents := lookupTableUsageExpr.ReplaceAllStringFunc(contents, func(match string) string {
 		parts := lookupTableUsageExpr.FindStringSubmatch(match)
 		lookupTableIdx, err := strconv.ParseInt(parts[1], 0, 0)
 		if err != nil {
@@ -80,10 +81,15 @@ func applyLookupTable(contents string, lookupTable []string) string {
 			}
 		}
 
-		log.Printf("Replacing %s, with lookup valude %s", match, result)
+		log.Printf("Replacing %s, with lookup value %s", match, result)
+		replacementStats++
 
 		return result
 	})
+
+	log.Printf("Applied lookup table, replaced %d references", replacementStats)
+
+	return newContents
 }
 
 type expressionStats struct {
